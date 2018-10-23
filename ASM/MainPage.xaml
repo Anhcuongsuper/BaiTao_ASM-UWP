@@ -1,0 +1,50 @@
+﻿<Page
+    x:Class="ASM.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ASM"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <ScrollViewer>
+        <StackPanel>
+            <StackPanel.Background>
+                <ImageBrush ImageSource="/Assets/login.png" Stretch="UniformToFill" Opacity="0.9"/>
+            </StackPanel.Background>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel>
+                    <TextBox x:Name="t_firstName" Header="First Name" Margin="0,0,10,0" Width="700" BorderBrush="Green" BorderThickness="0,0,0,3" />
+                    <TextBlock x:Name="firstName" Visibility="Collapsed" Foreground="Red" Margin="5,20,0,0"/>
+                </StackPanel>
+                <StackPanel>
+                    <TextBox x:Name="t_lastName" Header="LastName"  Margin="0,0,10,0"  BorderBrush="Green" Width="700" BorderThickness="0,0,0,3"/>
+                    <TextBlock x:Name="lastName" Foreground="Red" Visibility="Collapsed"  Margin="5,20,0,0"/>
+                </StackPanel>
+            </StackPanel>
+            <TextBox x:Name="t_email" Header="Email" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" BorderBrush="Green" BorderThickness="0,0,0,3" />
+            <TextBlock x:Name="email" Visibility="Collapsed" Foreground="Red" Margin="0,0,0,0" />
+            <PasswordBox x:Name="t_passWord" Header="Password"   BorderBrush="Green" BorderThickness="0,0,0,3" />
+            <TextBlock x:Name="password" Visibility="Collapsed"  Foreground="Red" Margin="5,20,0,0" />
+            <TextBox x:Name="t_avatarUrl" Header="AvatarUrl"  BorderBrush="Green" BorderThickness="0,0,0,3"  />
+            <Image x:Name="avatar" Width="106" Height="150" HorizontalAlignment="Left" Margin="20,10,0,0" Source="/Assets/k.png"/>
+            <Button Content="Capture Your Photo" Margin="0,10,0,0" Click="Choose_Image"/>
+            <TextBox x:Name="t_phone" Header="Phone Number"  BorderBrush="Green" BorderThickness="0,0,0,3" />
+            <TextBlock x:Name="phone" Visibility="Collapsed"  Foreground="Red" Margin="5,20,0,0" />
+            <TextBox x:Name="t_address" Header="Address" AcceptsReturn="True" Height= "100" BorderBrush="Green" BorderThickness="0,0,0,3" />
+            <TextBox x:Name="t_introduction" Header="Introduction" AcceptsReturn="True" Height= "100" BorderBrush="Green" BorderThickness="0,0,0,3"/>
+            <CalendarDatePicker x:Name="t_birthdayPicker" Header="Birthday" DateChanged="BirthdayPicker_DateChanged" Background="#15cdab"/>
+            <TextBlock Text="Gender"/>
+            <StackPanel Orientation="Horizontal">
+                <RadioButton Content="Male" Tag="1" Checked="RadioButton_Checked"/>
+                <RadioButton Content="Female" Tag="0" />
+                <RadioButton Content="Other" Tag="2" IsChecked="True" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="doSubmit" Content="Submit" Click="doSubmit_Click" HorizontalAlignment="Center" Height="70" VerticalAlignment="Center" Width="330" Margin="0,0,200,0" Background="#15cdab"/>
+                <Button x:Name="doReset" Content="Reset" Click="doReset_Click" HorizontalAlignment="Center" VerticalAlignment="Center" Height="70" Width="330" Background="#15cdab"/>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+</Page>
